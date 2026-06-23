@@ -2,125 +2,123 @@ import { motion } from "framer-motion";
 
 function AboutPreview() {
   return (
-    <motion.section
-      initial={{ opacity: 0, y: 80 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.8 }}
-      className="bg-[#F8F6F2] py-20 md:py-28"
-    >
+    <section className="bg-[#F8F6F2] py-20 md:py-28 overflow-hidden">
+
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-10">
 
-        {/* Heading */}
-        <motion.div
-          initial={{ opacity: 0, y: 60 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="max-w-4xl mb-16"
-        >
-          <p className="uppercase tracking-[4px] text-yellow-600 text-sm font-semibold mb-4">
-            About Stable Evershine
-          </p>
+        <div className="grid lg:grid-cols-2 gap-14 items-center">
 
-          <h2
-            className="
-            text-4xl
-            md:text-5xl
-            lg:text-6xl
-            font-bold
-            text-gray-900
-            leading-tight
-          "
-          >
-            A Brand Inspired By
-            <br />
-            Water, Shell & Sunrise
-          </h2>
-
-          <p className="mt-6 text-gray-600 text-base md:text-lg max-w-3xl">
-            Stable Evershine reflects growth, positivity and timeless
-            craftsmanship. Inspired by a shell emerging from water and the
-            warmth of a new sunrise, every development is designed to create
-            exceptional living experiences.
-          </p>
-        </motion.div>
-
-        {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-
-          {/* Card 1 */}
+          {/* Left Image */}
           <motion.div
-            initial={{ opacity: 0, y: 80 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: -80 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.1 }}
-            whileHover={{ y: -10 }}
-            className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all duration-300"
+            transition={{ duration: 1 }}
+            className="overflow-hidden rounded-[32px] group"
           >
-            <div className="w-14 h-14 rounded-full bg-yellow-100 flex items-center justify-center mb-6">
-              <span className="text-2xl">◉</span>
-            </div>
 
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              Shell From Water
-            </h3>
+            <img
+              src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80"
+              alt="Stable Evershine"
+              className="
+                w-full
+                h-[450px]
+                md:h-[600px]
+                object-cover
+                group-hover:scale-110
+                transition-transform
+                duration-700
+              "
+            />
 
-            <p className="text-gray-600 leading-relaxed">
-              Inspired by the emergence of a shell from water,
-              symbolizing beauty, strength and timeless elegance.
-            </p>
           </motion.div>
 
-          {/* Card 2 */}
+          {/* Right Content */}
           <motion.div
-            initial={{ opacity: 0, y: 80 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: 80 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.3 }}
-            whileHover={{ y: -10 }}
-            className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all duration-300"
+            transition={{ duration: 1 }}
           >
-            <div className="w-14 h-14 rounded-full bg-yellow-100 flex items-center justify-center mb-6">
-              <span className="text-2xl">☀</span>
+
+            <p className="uppercase tracking-[4px] text-yellow-600 text-sm font-semibold mb-4">
+              About Stable Evershine
+            </p>
+
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+              Building
+              <br />
+              Timeless Residences
+            </h2>
+
+            <p className="mt-8 text-gray-600 text-lg leading-relaxed">
+              Inspired by the elegance of water, the strength of a shell,
+              and the optimism of a sunrise, Stable Evershine creates
+              residences that blend architecture, luxury and lifestyle.
+              Every development is designed to deliver exceptional living
+              experiences for generations.
+            </p>
+
+            {/* Stats */}
+            <div className="grid grid-cols-3 gap-6 mt-10">
+
+              <div>
+                <h3 className="text-3xl md:text-4xl font-bold text-black">
+                  25+
+                </h3>
+
+                <p className="text-gray-500 mt-2 text-sm">
+                  Projects
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-3xl md:text-4xl font-bold text-black">
+                  1000+
+                </h3>
+
+                <p className="text-gray-500 mt-2 text-sm">
+                  Families
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-3xl md:text-4xl font-bold text-black">
+                  15+
+                </h3>
+
+                <p className="text-gray-500 mt-2 text-sm">
+                  Years
+                </p>
+              </div>
+
             </div>
 
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              Sunrise & Growth
-            </h3>
+            {/* CTA */}
+            <button
+              className="
+                mt-10
+                bg-black
+                text-white
+                px-8
+                py-4
+                rounded-full
+                hover:bg-yellow-500
+                hover:text-black
+                transition-all
+                duration-300
+              "
+            >
+              Discover More
+            </button>
 
-            <p className="text-gray-600 leading-relaxed">
-              Every project reflects positivity,
-              opportunity and the promise of new beginnings.
-            </p>
-          </motion.div>
-
-          {/* Card 3 */}
-          <motion.div
-            initial={{ opacity: 0, y: 80 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.5 }}
-            whileHover={{ y: -10 }}
-            className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all duration-300"
-          >
-            <div className="w-14 h-14 rounded-full bg-yellow-100 flex items-center justify-center mb-6">
-              <span className="text-2xl">▣</span>
-            </div>
-
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              Premium Living
-            </h3>
-
-            <p className="text-gray-600 leading-relaxed">
-              Luxury residences crafted with modern architecture,
-              thoughtful planning and enduring quality.
-            </p>
           </motion.div>
 
         </div>
+
       </div>
-    </motion.section>
+
+    </section>
   );
 }
 

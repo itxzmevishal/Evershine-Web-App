@@ -8,6 +8,7 @@ import NriCornerSection from "../components/NriCornerSection";
 import ContactCTA from "../components/ContactCTA";
 import PressMediaSection from "../components/PressMediaSection";
 import StatsSection from "../components/StatsSection";
+import Reveal from "../components/Reveal";
 
 function Home() {
   return (
@@ -15,11 +16,22 @@ function Home() {
       <Hero />
       <StatsSection />
       <HeroSearch />
-      <AboutPreview />
-      <FeaturedProjects />
-      <AssociationsSection />
-      <PressMediaSection />
-      <NriCornerSection />
+      <Reveal>
+  <AboutPreview />
+</Reveal>
+<Reveal>
+  <FeaturedProjects />
+</Reveal>
+      <Reveal>
+        <AssociationsSection />
+      </Reveal>
+      <Reveal>
+        <PressMediaSection />
+      </Reveal>
+      <Reveal>
+        <NriCornerSection />
+      </Reveal>
+      
       <ContactCTA />
     </>
   );

@@ -1,76 +1,130 @@
+import { motion } from "framer-motion";
+import { FaGlobeAsia, FaChartLine, FaHome } from "react-icons/fa";
+
 function NriCornerSection() {
-  const articles = [
-    {
-      id: 1,
-      title: "Guide For NRI Property Investment",
-      description:
-        "Everything NRIs need to know before investing in premium real estate projects in India.",
-    },
-    {
-      id: 2,
-      title: "Documents Required For Property Purchase",
-      description:
-        "A complete checklist of legal and financial documents for smooth transactions.",
-    },
-    {
-      id: 3,
-      title: "Tax Benefits & Compliance",
-      description:
-        "Understanding taxation, repatriation and compliance for NRI property owners.",
-    },
-  ];
-
   return (
-    <section className="bg-[#F8F6F2] py-20 md:py-28">
+    <section className="relative bg-[#0B0B0B] py-20 md:py-28 overflow-hidden">
 
-      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-10">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-10">
+        <div
+          className="
+            w-full
+            h-full
+            bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.2)_1px,transparent_1px)]
+            bg-[length:40px_40px]
+          "
+        />
+      </div>
 
-        {/* Heading */}
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-14">
+      <div className="relative max-w-7xl mx-auto px-4 md:px-6 lg:px-10">
 
-          <div>
-            <p className="uppercase tracking-[4px] text-yellow-600 text-sm font-semibold mb-4">
+        <div className="grid lg:grid-cols-2 gap-14 items-center">
+
+          {/* Left Content */}
+          <motion.div
+            initial={{ opacity: 0, x: -80 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+
+            <p className="uppercase tracking-[4px] text-yellow-500 text-sm font-semibold mb-4">
               NRI Corner
             </p>
 
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900">
-              Resources For Global Investors
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+              Invest In India
+              <br />
+              From Anywhere
             </h2>
-          </div>
 
-          <button className="border border-gray-300 px-8 py-3 rounded-full hover:bg-black hover:text-white transition-all duration-300 w-fit">
-            Visit NRI Corner
-          </button>
+            <p className="text-gray-400 mt-8 text-lg leading-relaxed max-w-xl">
+              Stable Evershine offers seamless investment opportunities
+              for NRIs looking to build wealth through premium real estate.
+              Dedicated assistance, legal guidance and end-to-end support.
+            </p>
 
-        </div>
-
-        {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-          {articles.map((article) => (
-            <div
-              key={article.id}
-              className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all duration-300"
+            <button
+              className="
+                mt-10
+                bg-yellow-500
+                text-black
+                px-8
+                py-4
+                rounded-full
+                font-semibold
+                hover:bg-yellow-400
+                transition-all
+                duration-300
+              "
             >
+              Explore NRI Services
+            </button>
 
-              <div className="w-14 h-14 rounded-full bg-yellow-100 flex items-center justify-center mb-6">
-                <span className="text-xl font-bold">NRI</span>
-              </div>
+          </motion.div>
 
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                {article.title}
+          {/* Right Features */}
+          <motion.div
+            initial={{ opacity: 0, x: 80 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="grid gap-6"
+          >
+
+            <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl p-8">
+
+              <FaGlobeAsia
+                size={40}
+                className="text-yellow-500 mb-5"
+              />
+
+              <h3 className="text-white text-2xl font-bold mb-3">
+                Global Access
               </h3>
 
-              <p className="text-gray-600 leading-relaxed">
-                {article.description}
+              <p className="text-gray-400">
+                Invest from anywhere in the world with dedicated support.
               </p>
 
-              <button className="mt-6 font-semibold hover:text-yellow-600 transition-all">
-                Read Article →
-              </button>
+            </div>
+
+            <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl p-8">
+
+              <FaChartLine
+                size={40}
+                className="text-yellow-500 mb-5"
+              />
+
+              <h3 className="text-white text-2xl font-bold mb-3">
+                Strong Returns
+              </h3>
+
+              <p className="text-gray-400">
+                Benefit from India's rapidly growing real estate market.
+              </p>
 
             </div>
-          ))}
+
+            <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl p-8">
+
+              <FaHome
+                size={40}
+                className="text-yellow-500 mb-5"
+              />
+
+              <h3 className="text-white text-2xl font-bold mb-3">
+                Trusted Homes
+              </h3>
+
+              <p className="text-gray-400">
+                Premium residences crafted for long-term value and comfort.
+              </p>
+
+            </div>
+
+          </motion.div>
 
         </div>
 

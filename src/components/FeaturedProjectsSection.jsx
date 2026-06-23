@@ -6,8 +6,7 @@ function FeaturedProjectsSection() {
       id: 1,
       title: "Evershine Solara",
       status: "New Launch",
-      description:
-        "Premium 3 & 4 BHK residences designed around luxury, comfort and modern architecture.",
+      location: "Nashik",
       image:
         "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80",
     },
@@ -15,8 +14,7 @@ function FeaturedProjectsSection() {
       id: 2,
       title: "Evershine Waterfront",
       status: "Featured Project",
-      description:
-        "Waterfront living with premium amenities, open landscapes and timeless design.",
+      location: "Mumbai",
       image:
         "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=80",
     },
@@ -52,74 +50,124 @@ function FeaturedProjectsSection() {
 
         </motion.div>
 
-        {/* Project Cards */}
+        {/* Projects */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
 
           {projects.map((project, index) => (
             <motion.div
               key={project.id}
-              initial={{ opacity: 0, y: 100 }}
+              initial={{ opacity: 0, y: 80 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{
                 duration: 0.8,
                 delay: index * 0.2,
               }}
-              whileHover={{ y: -12 }}
-              className="group overflow-hidden rounded-3xl bg-white shadow-md hover:shadow-2xl transition-all duration-500"
+              className="
+                relative
+                overflow-hidden
+                rounded-[30px]
+                group
+                cursor-pointer
+                h-[450px]
+                md:h-[550px]
+              "
             >
 
               {/* Image */}
-              <div className="overflow-hidden">
+              <img
+                src={project.image}
+                alt={project.title}
+                className="
+                  absolute
+                  inset-0
+                  w-full
+                  h-full
+                  object-cover
+                  transition-transform
+                  duration-700
+                  group-hover:scale-110
+                "
+              />
 
-                <motion.img
-                  src={project.image}
-                  alt={project.title}
-                  whileHover={{ scale: 1.08 }}
-                  transition={{ duration: 0.7 }}
-                  className="
-                    w-full
-                    h-[280px]
-                    md:h-[350px]
-                    lg:h-[420px]
-                    object-cover
-                  "
-                />
-
-              </div>
+              {/* Gradient Overlay */}
+              <div
+                className="
+                  absolute
+                  inset-0
+                  bg-gradient-to-t
+                  from-black
+                  via-black/50
+                  to-transparent
+                "
+              />
 
               {/* Content */}
-              <div className="p-8">
+              <div
+                className="
+                  absolute
+                  bottom-0
+                  left-0
+                  p-8
+                  md:p-10
+                  text-white
+                  w-full
+                "
+              >
 
-                <motion.span
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.3 }}
-                  className="text-yellow-600 text-sm font-semibold uppercase tracking-wider"
+                <span
+                  className="
+                    inline-block
+                    bg-yellow-500
+                    text-black
+                    px-4
+                    py-2
+                    rounded-full
+                    text-xs
+                    font-semibold
+                    uppercase
+                    tracking-wider
+                    mb-5
+                  "
                 >
                   {project.status}
-                </motion.span>
+                </span>
 
-                <h3 className="text-3xl font-bold text-gray-900 mt-3">
+                <h3 className="text-3xl md:text-4xl font-bold">
                   {project.title}
                 </h3>
 
-                <p className="text-gray-600 mt-4 leading-relaxed">
-                  {project.description}
+                <p className="mt-2 text-gray-300">
+                  {project.location}
                 </p>
 
-                <motion.button
-                  whileHover={{
-                    scale: 1.05,
-                  }}
-                  whileTap={{
-                    scale: 0.95,
-                  }}
-                  className="mt-6 bg-black text-white px-6 py-3 rounded-full hover:bg-yellow-500 hover:text-black transition-all duration-300"
+                <div
+                  className="
+                    mt-6
+                    overflow-hidden
+                  "
                 >
-                  View Project
-                </motion.button>
+
+                  <button
+                    className="
+                      translate-y-8
+                      opacity-0
+                      group-hover:translate-y-0
+                      group-hover:opacity-100
+                      transition-all
+                      duration-500
+                      bg-white
+                      text-black
+                      px-6
+                      py-3
+                      rounded-full
+                      font-semibold
+                    "
+                  >
+                    View Details
+                  </button>
+
+                </div>
 
               </div>
 

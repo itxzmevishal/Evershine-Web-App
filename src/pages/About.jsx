@@ -1,8 +1,10 @@
 import PageWrapper from "../components/PageWrapper";
+import PageTransition from "../components/PageTransition";
 
 function About()
          {
   return (
+    <PageTransition>
      <PageWrapper>
       {/* Hero Section */}
       <section className="relative pt-32 pb-24 bg-black text-white">
@@ -183,6 +185,7 @@ function About()
 
       </section>
     </PageWrapper>
+    </PageTransition>
   );
 }
 

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
+import EnquiryModal from "./components/EnquiryModal";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -15,9 +16,12 @@ import Contact from "./pages/Contact";
 import ScrollProgress from "./components/ScrollProgress";
 import BackToTop from "./components/BackToTop";
 import WhatsAppButton from "./components/WhatsAppButton";
+import CustomCursor from "./components/CustomCursor";
+import SmoothScroll from "./components/SmoothScroll";
 
 function App() {
   const [loading, setLoading] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -33,8 +37,10 @@ function App() {
 
   return (
     <>
+    <SmoothScroll />
+       <CustomCursor />
       <ScrollProgress />
-      <Navbar />
+      <Navbar openModal={() => setIsModalOpen(true)} />
 
       <Routes>
         <Route path="/" element={<Home />} />
@@ -45,6 +51,11 @@ function App() {
         <Route path="/nri-corner" element={<NriCornerPage />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
+
+      <EnquiryModal
+  isOpen={isModalOpen}
+  onClose={() => setIsModalOpen(false)}
+/>
 
       <BackToTop />
       <WhatsAppButton />
