@@ -18,6 +18,7 @@ import BackToTop from "./components/BackToTop";
 import WhatsAppButton from "./components/WhatsAppButton";
 import CustomCursor from "./components/CustomCursor";
 import SmoothScroll from "./components/SmoothScroll";
+import EvershineSolara from "./pages/projects/EvershineSolara";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -37,8 +38,8 @@ function App() {
 
   return (
     <>
-    <SmoothScroll />
-       <CustomCursor />
+      <SmoothScroll />
+      <CustomCursor />
       <ScrollProgress />
       <Navbar openModal={() => setIsModalOpen(true)} />
 
@@ -50,12 +51,16 @@ function App() {
         <Route path="/press-media" element={<PressMediaPage />} />
         <Route path="/nri-corner" element={<NriCornerPage />} />
         <Route path="/contact" element={<Contact />} />
+        <Route
+          path="/projects/evershine-solara"
+          element={<EvershineSolara />}
+        />
       </Routes>
 
       <EnquiryModal
-  isOpen={isModalOpen}
-  onClose={() => setIsModalOpen(false)}
-/>
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
 
       <BackToTop />
       <WhatsAppButton />
